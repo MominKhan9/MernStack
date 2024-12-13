@@ -18,10 +18,10 @@ const Footer = () => {
         <div className="footer-content-center">
             <h2>Company</h2>
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Delivery</li>
-                <li>Privicy Policy</li>
+                <a href="/"><li>Home</li></a> 
+                 <a href="#app-download"><li>Mobile App</li></a>
+                <a href="#explore-menu"><li>Our Menu</li></a>
+                <a href=""><li>Privicy Policy</li></a>
             </ul>
         </div>
         <div className="footer-content-right">
