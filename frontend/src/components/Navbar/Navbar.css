@@ -1,25 +1,29 @@
-.navbar{
+.navbar {
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.navbar .logo{
+
+.navbar .logo {
     width: 150px;
 }
-.navbar-menu{
+
+.navbar-menu {
     display: flex;
     list-style: none;
     gap: 20px;
     color: #49557e;
     font-size: 18px;
 }
-.navbar-right{
+
+.navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
 }
-.navbar button{
+
+.navbar button {
     background: transparent;
     font-size: 16px;
     color: #49557e;
@@ -29,38 +33,81 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.navbar button:hover{
+
+.navbar button:hover {
     background-color: #fff4f2;
 }
-.navbar .active{
+
+.navbar .active {
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
 }
-.navbar li{
+
+.navbar li {
     cursor: pointer;
 }
-.navbar-search-icon{
+
+/* Search Dropdown */
+.navbar-search-icon {
     position: relative;
 }
-.navbar-search-icon .dot{
+
+.navbar-search-icon:hover .search-dropdown {
+    display: block;
+}
+
+.search-dropdown {
+    display: none;
     position: absolute;
-    min-width: 10px;
-    height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    top: 30px;
+    left: -50%;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    width: 300px;
 }
-.navbar-profile{
+
+.search-dropdown input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.clear-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.clear-btn:hover {
+    background: darkred;
+}
+
+
+
+/* Profile Dropdown */
+.navbar-profile {
     position: relative;
 }
-.nav-profile-dropdown{
+
+.nav-profile-dropdown {
     position: absolute;
     display: none;
     right: 0;
     z-index: 1;
 }
-.navbar-profile:hover .nav-profile-dropdown{
+
+.navbar-profile:hover .nav-profile-dropdown {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -71,60 +118,100 @@
     outline: 2px solid white;
     list-style: none;
 }
-.nav-profile-dropdown li{
+
+.nav-profile-dropdown li {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
-.nav-profile-dropdown img{
+
+.nav-profile-dropdown img {
     width: 20px;
 }
-.nav-profile-dropdown li:hover{
+
+.nav-profile-dropdown li:hover {
     color: tomato;
 }
 
+
+.basket {
+    position: relative;
+}
+
+.basket:hover .search-dropdown {
+    display: block;
+}
+
+.basket .dot {
+    position: absolute;
+    min-width: 10px;
+    height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+/* Responsive Styles */
 @media (max-width: 1050px) {
-    .navbar .logo{
+    .navbar .logo {
         width: 140px;
     }
-    .navbar-menu{
-        gap: 20px;
+
+    .navbar-menu {
+        gap: 15px;
         font-size: 17px;
     }
-    .navbar-right{
-        gap: 30px;
-    }
-    .navbar-right img{
-        width: 22px;
-    }
-    .navbar-right button{
-        padding: 8px 25px;
+
+    .navbar-right {
+        gap: 2px;
     }
 
+    .navbar-right img {
+        width: 22px;
+    }
+
+    .navbar-right button {
+        padding: 8px 20px;
+    }
 }
+
 @media (max-width: 900px) {
-    .navbar .logo{
+    .navbar .logo {
         width: 120px;
     }
-    .navbar-menu{
-        gap: 15px;
+
+    .navbar-menu {
+        gap: 10px;
         font-size: 16px;
     }
-    .navbar-right{
+
+    .navbar-right {
         gap: 20px;
     }
-    .navbar-right img{
+
+    .navbar-right img {
         width: 20px;
     }
-    .navbar-right button{
-        padding: 7px 20px;
+
+    .navbar-right button {
+        padding: 7px 18px;
         font-size: 15px;
     }
 
+    .search-dropdown {
+        width: 250px;
+        left: 0; /* Adjusted for better alignment on smaller screens */
+    }
 }
+
+
 @media (max-width: 750px) {
-    .navbar-menu{
+    .navbar-menu {
         display: none;
+    }
+
+    .navbar-right {
+        gap: 15px;
     }
 }
